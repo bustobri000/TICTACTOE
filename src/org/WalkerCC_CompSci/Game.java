@@ -65,12 +65,36 @@ public class Game {
 
     private boolean CheckForWin() {
         //Implement this method.
-        return false;
+
+        if (gameBoard.spacesText[0].equals(gameBoard.spacesText[1]) && gameBoard.spacesText[2].equals(gameBoard.spacesText[1])){
+            return true;
+        } else if (gameBoard.spacesText[3].equals(gameBoard.spacesText[4]) && gameBoard.spacesText[5].equals(gameBoard.spacesText[3])){
+            return true;
+        } else if (gameBoard.spacesText[6].equals(gameBoard.spacesText[7]) && gameBoard.spacesText[8].equals(gameBoard.spacesText[7])){
+            return true;
+        } else if (gameBoard.spacesText[0].equals(gameBoard.spacesText[3]) && gameBoard.spacesText[6].equals(gameBoard.spacesText[3])){
+            return true;
+        } else if (gameBoard.spacesText[1].equals(gameBoard.spacesText[4]) && gameBoard.spacesText[7].equals(gameBoard.spacesText[4])){
+            return true;
+        } else if (gameBoard.spacesText[2].equals(gameBoard.spacesText[5]) && gameBoard.spacesText[8].equals(gameBoard.spacesText[5])){
+            return true;
+        } else if (gameBoard.spacesText[0].equals(gameBoard.spacesText[4]) && gameBoard.spacesText[8].equals(gameBoard.spacesText[4])){
+            return true;
+        } else if (gameBoard.spacesText[2].equals(gameBoard.spacesText[4]) && gameBoard.spacesText[6].equals(gameBoard.spacesText[4])){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
-    private boolean IsFilled(){
-        //Implement this method.
-        return false;
+    private boolean IsFilled() {
+            if (
+                    !gameBoard.spacesText[0].equals("0") && !gameBoard.spacesText[1].equals("1") && !gameBoard.spacesText[2].equals("2") && !gameBoard.spacesText[3].equals("3")&& !gameBoard.spacesText[4].equals("4") && !gameBoard.spacesText[5].equals("5")&& !gameBoard.spacesText[6].equals("6")&& !gameBoard.spacesText[7].equals("7")&& !gameBoard.spacesText[8].equals("8")
+            ){
+                return true;
+            } else {
+                return false;
+            }
     }
-
 }
