@@ -15,7 +15,6 @@ public class Game {
         player2 = new Player(Space.O, 2);
     }
 
-
     public void Play() {
         //Clean this up so that it handles repetition and ends the game when its over.
 
@@ -58,9 +57,6 @@ public class Game {
             gameBoard.Draw();
         }
 
-
-
-
     }
 
     private boolean CheckForWin() {
@@ -89,12 +85,11 @@ public class Game {
     }
 
     private boolean IsFilled() {
-            if (
-                    !gameBoard.spacesText[0].equals("0") && !gameBoard.spacesText[1].equals("1") && !gameBoard.spacesText[2].equals("2") && !gameBoard.spacesText[3].equals("3")&& !gameBoard.spacesText[4].equals("4") && !gameBoard.spacesText[5].equals("5")&& !gameBoard.spacesText[6].equals("6")&& !gameBoard.spacesText[7].equals("7")&& !gameBoard.spacesText[8].equals("8")
-            ){
-                return true;
-            } else {
-                return false;
+        for (int i = 0; i < 9; i++) {
+            if (gameBoard.spaces[i] == Space.EMPTY){
+                    return false;
             }
+        }
+        return true;
     }
 }
